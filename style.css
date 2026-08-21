@@ -1,0 +1,457 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        to bottom,
+        #f7b2d8 0%,
+        #e8b5d5 25%,
+        #c9a8d8 50%,
+        #a995d0 75%,
+        #8d7bc5 100%
+    );
+
+    background-attachment: fixed;
+
+    color: #222;
+
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+}
+
+
+h1 {
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-family: Algerian, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+}
+
+.summary {
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.summary div {
+    background: white;
+
+    flex: 1;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.summary p {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+
+.form,
+.transactions,
+.chart-container {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.form h2,
+.transactions h2,
+.chart-container h2 {
+
+    margin-bottom: 20px;
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #333;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+
+    background: #555;
+}
+
+
+hr {
+
+    margin: 20px 0;
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* Transaction History */
+
+#transactionList {
+
+    list-style: none;
+}
+
+
+#transactionList li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 10px;
+
+    border-bottom: 1px solid #ddd;
+
+    border-left: 4px solid transparent;
+}
+
+
+.expense-transaction {
+
+    border-left-color: #d9534f !important;
+
+}
+
+
+.income-transaction {
+
+    border-left-color: #28a745 !important;
+
+}
+
+
+.transaction-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.transaction-info strong {
+
+    font-size: 16px;
+
+}
+
+
+.transaction-info small {
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.transaction-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.expense-amount {
+
+    color: #d9534f;
+
+}
+
+
+.income-amount {
+
+    color: #28a745;
+
+}
+
+#transactionList li span:last-child {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* Delete button */
+
+#transactionList button {
+
+    width: auto;
+
+    padding: 6px 10px;
+
+    background: #eee;
+
+    color: #555;
+
+    font-size: 12px;
+
+    border: 1px solid #ddd;
+}
+
+
+#transactionList button:hover {
+
+    background: #ddd;
+
+}
+
+/* Chart */
+
+.chart-container {
+
+    min-height: 400px;
+}
+
+
+.chart-container canvas {
+
+    max-height: 350px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .summary {
+
+        flex-direction: column;
+
+    }
+
+    .summary div {
+
+        width: 100%;
+
+    }
+
+    #transactionList li {
+
+        gap: 10px;
+
+    }
+
+}
+
+#search {
+    margin-bottom: 20px;
+}
+
+.monthly-summary {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.monthly-summary div {
+
+    background: white;
+
+    flex: 1;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.monthly-section {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.monthly-section h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.month-selector {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.month-selector select {
+
+    margin-bottom: 0;
+
+}
+
+
+.monthly-summary {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.monthly-summary div {
+
+    background: #f4f6f8;
+
+    flex: 1;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+}
+
+
+.monthly-summary p {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .month-selector {
+
+        flex-direction: column;
+
+    }
+
+
+    .monthly-summary {
+
+        flex-direction: column;
+
+    }
+
+}
+
+h2,
+h3,
+label,
+button,
+input,
+select,
+#budgetStatus,
+#transactionList {
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.summary p,
+.monthly-summary p,
+.income-amount,
+.expense-amount {
+    font-family: Arial, sans-serif;
+}
