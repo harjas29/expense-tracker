@@ -455,3 +455,8 @@ select,
 .expense-amount {
     font-family: Arial, sans-serif;
 }
+
+.date-label {
+    display: block;
+    margin-bottom: 8px;
+}
